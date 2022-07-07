@@ -1,5 +1,8 @@
 <template>
-  <div class="cards">
+  <router-link
+    :to="{ name: 'PropertyDetails', params: { id: property.id } }"
+    class="cards"
+  >
     <img :src="property.image" style="width: 100%; height: 200px" />
     <div class="price-details">
       <p>R {{ property.price }}</p>
@@ -12,7 +15,7 @@
       <li><i class="fa-solid fa-car"></i> {{ property.garage }}</li>
       <li><i class="fa-solid fa-ruler"></i> {{ property.size }}m²</li>
     </div>
-  </div>
+  </router-link>
 </template>
 
 <script>
@@ -56,6 +59,11 @@ export default {
 
 .cards:hover .price-details {
   opacity: 1;
+}
+
+.cards:hover a {
+  text-decoration: none;
+  color: black;
 }
 
 li {

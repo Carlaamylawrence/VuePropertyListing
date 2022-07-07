@@ -1,5 +1,6 @@
 <template>
   <div class="card-display">
+    <h1></h1>
     <PropertyCard
       v-for="property in properties"
       :key="property.id"
@@ -26,6 +27,14 @@ export default {
 .card-display {
   display: flex;
   flex-wrap: wrap;
+  justify-content: space-evenly;
   align-items: center;
 }
+
+a {
+  text-decoration: none;
+  color: black;
+}
 </style>
+
+<!-- npx json-server data/db.json --watch -->
